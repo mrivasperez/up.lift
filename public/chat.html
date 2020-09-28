@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+      <title>up.lift</title>
+     <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body>
+    <div class="chat">
+        <div id="sidebar" class="chat__sidebar">
+        </div>
+        <div class="chat__main">
+            <div id="messages" class="chat__messages"></div>
+
+            <div class="compose">
+              <!-- Chat input -->
+              <input id="chatInput" type="text" placeholder="Chat..." autocomplete="off"/>
+              <!-- Send Msg -->
+              <button id="sendBtn">Send</button>
+              <!-- Send location -->
+              <button class="hidden" id="locationBtn">Send Location</button>
+            </div>
+            </div>
+            <div id="message-form">
+
+        </div>
+    </div>
+    
+    <script id="message-template" type="text/html">
+      <div class="message">
+        <p>
+            <span class="message__name">{{username}}</span>
+            <span class="message__meta">{{createdAt}}</span>
+        </p>
+        <p>{{message}}</p>
+      </div>
+    </script>
+    <script id="location-template" type="text/html">
+        <div class="message">
+            <p>
+                <span class="message__name">{{username}}</span>
+                <span class="message__meta">{{locationCreatedAt}}</span>
+            </p>
+            <p><a href="{{link}}" target="_blank">{{locationMessage}}</a></p>
+        </div>
+
+    </script>
+    <script id="sidebar-template" type="text/html">
+      <div class="room-title">
+          <h2>up.lift</h2>
+          <p>A wholesome place.</p>
+        </div>
+
+      <h3 class="list-title">Online users</h3>
+      <ul class="users">
+        {{#users}}
+          <li>{{username}}</li>
+        {{/users}}
+      </ul>
+
+    </script>
+    <!-- Libraries -->
+    <script
+      crossorigin="anonymous"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"
+    ></script>
+    <script
+      crossorigin="anonymous"
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"
+    ></script>
+    <script
+      crossorigin="anonymous"
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"
+    ></script>
+
+    <!-- Dependencies -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat.js"></script>
+
+  </body>
+</html>

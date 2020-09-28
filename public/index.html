@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+      <title>up.lift</title>
+     <link rel="stylesheet" href="../css/style.css"">
+  </head>
+  <body>
+   <div class="centered-form">
+     <div class="centered-form__box">
+       <h1>Welcome to up.lift</h1>
+       <p>A wholesome place. <a href="https://github.com/mrivasperez/up.lift" target="_blank">This is an open source project.</a></p>
+       <br>
+      <form action="/chat.html">
+        <label for="">What is your name?</label>
+        <input type="text" name="username" placeholder="Display name" required>
+        <label class="hidden" for="">Room</label>
+        <input class="hidden" id="indexRoomSelection" type="text" name="room" placeholder="Room" required>
+        <button>Join</button>
+      </form>
+     </div>
+   </div>
+   <script>  
+    document.getElementById('indexRoomSelection').value='Main'
+ 
+     </script>
+  </body>
+</html>
